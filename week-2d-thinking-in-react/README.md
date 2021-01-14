@@ -4,6 +4,26 @@ Here are Matt's notes for the relatively erratic "thinking in react" workshop fo
 
 ## Table of Contents
 
+* [Blitzing over React basics](#blitzing-over-react-basics)
+* [Functional programming in React](#functional-programming-in-react)
+  * [map, filter, reduce](#map-filter-reduce)
+    * [Array.prototype.map()](#arrayprototypemap)
+    * [Array.prototype.filter()](#arrayprototypefilter)
+    * [Array.prototype.reduce()](#arrayprototypereduce)
+  * [Higher-order functions and two-way state](#higher-order-functions-and-two-way-state)
+  * [Composition](#composition)
+  * [Containment](#containment)
+  * [Composition versus Inheritance](#composition-versus-inheritance)
+  * [Partial application and 'currying'](#partial-application-and-currying)
+* [Classes versus Hooks](#classes-versus-hooks)
+  * [JS Classes (and why they're not like OOP)](#js-classes-and-why-theyre-not-like-oop)
+  * [useEffect versus component lifecycle](#useeffect-versus-component-lifecycle)
+* [Misc. React](#misc-react)
+  * [React Router](#react-router)
+  * [Why Redux (or others)](#why-redux-or-others)
+  * [CRA Goodies](#cra-goodies)
+* [Conclusion](#conclusion)
+* [Licensing](#licensing)
 
 ## Blitzing over React basics
 
