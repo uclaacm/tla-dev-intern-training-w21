@@ -131,6 +131,7 @@ const urgentTasks = tasks.filter((task) => task.urgent);
 const urgentComponents = urgentTasks.map((task) => {
   return <Task task={task.task} />
 })
+// <Task task="do hwk" />, <Task task="write this workshop" />
 ```
 
 Now you've got another tool in your functional toolbox! Let's do one more :)
@@ -167,6 +168,7 @@ const sum_of_ages = peeps.reduce(ageSum, 0);
 
 const ageConcat = (accum, person) => accum + person.name;
 const concat_of_names = peeps.reduce(ageConcat, "");
+// "mattjaredaang" (but don't rely on this behaviour!)
 ```
 
 Intuitively, reduce can operate over arrays too! Unlike the others, `reduce` can return anything - and typically it returns just one value. How this value is determined is as follows:
@@ -390,11 +392,15 @@ Matt discusses the class-based versus hooks-based approaches to writing React co
 
 ### JS Classes (and why they're not like OOP)
 
-TODO
+Moved to another week.
 
 ### useEffect versus component lifecycle
 
+Moved to another week.
+
 ## Misc. React
+
+Moved to another week.
 
 ### React Router
 
@@ -403,6 +409,8 @@ TODO
 ### CRA Goodies
 
 ## Conclusion
+
+Moved to another week.
 
 ## Licensing
 
