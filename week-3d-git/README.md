@@ -5,32 +5,13 @@ code versioning in industry has a lot more going for it than
 you might think. Below are Leo's notes for a deep dive into
 the inner-machinations of the utility we use every day.
 
+[:toc]
+
 ## Required Software
 
 First, install Git from [the project website](https://git-scm.com/). Check to make
 sure it is properly installed by opening a terminal and running `git --version`.
 The command should output the version number you installed.
-
-## Table of Contents (not final)
-
-* Understanding git
-    * Local + distributed
-    * What are commits
-    * What is a remote
-    * What are branches
-* Cool git commands
-    * typical stuff (pull, add, commit, push)
-    * git pull vs fetch
-    * git checkout
-    * git branch
-    * git switch
-    * git merge (and merge strategies)
-    * git cherry-pick
-* Resolving merge conflicts
-    * Interactive exercise :) 
-* Pull Requests, tags, and releases
-* Optional, commit hooks:
-    * Prettier + Husky + Lint-Staged
 
 ## What is Git?
 
@@ -61,7 +42,22 @@ to carry that weight.
 
 ## Using Git
 
-### Creating a Repository
+### Configuring our User
+
+Before starting on anything, we need to tell Git our username and email so
+it can attach our name to anything we author.
+
+```sh
+$ git config --global user.email "me@email.com"
+$ git config --global user.name "My Name"
+```
+
+Notice the `--global` flag. If you wanted to use a particular user name or email for a specific
+project, you can omit this flag when in the working directory.
+
+With this, we're ready to go.
+
+### Creating a Repository, Making Commits
 
 You are Ash Ketchum and you're looking to create your website. Obviously, as you catch more
 Pokemon you're going to need to make a lot of changes. Further, as you grow older (?), you'll
@@ -69,9 +65,9 @@ need to update the appearance of your website. Luckily, Git was built for this! 
 a repository:
 
 ```sh
-mkdir pokedex
-cd pokedex
-git init
+mkdir pokedex       # make a folder (directory)
+cd pokedex          # change to the directory
+git init            # initialize a git repository in the directory
 ```
 
 With that, we have created an empty Git repository. While we're at it, let's make a new
@@ -111,6 +107,176 @@ command, we can use `git commit -m "My message"`.
 
 Finally, we can combine these options: `git commit -am "The commit message"`.
 
+This will create a commit with a given **ID**. All commits have a unique hash associated
+to them, letting you pinpoint changes made to your code over time.
+
+### Branches
+
+What if we wanted to do some experimentation in the styling of our website, but not have
+it be reflected in the one online yet? This is where Git's primary selling-point, branches,
+come in. Let's see it in action:
+
+```
+git branch experiment
+git switch experiment
+```
+
+These two commands will create a new branch `experiment` and switch your branch to it.
+Now, any commits and changes that we make on this branch will only remain on this branch.
+
+We make some changes and add another commit with `git commit -am ...`. Switch back to
+your original `master` branch (`git switch master`) and you'll see that your changes persist!
+This isn't what we expected.
+
+This is because switching branches is not the same as checking out all the files and work
+on a branch.
+
+If we wanted to check out a branch's version of the file, we can use the command
+`git checkout COMMIT_ID FILE_NAME`.
+
+To simplify this process, we can check out the entire version of the repository on a
+branch with `git checkout BRANCH_NAME`.
+
+We can make one or two more changes before moving along - try making a few small changes
+or maybe adding a few files!
+
+> Note: if you're all done experimenting, we can delete our branch with
+> `git branch -d BRANCH_NAME`. **Don't do this yet! We'll be using our
+> experiment branch later.**
+
+### Reviewing our Commits
+
+We can review the commit history of the repository with `git log`:
+
+```
+$ git log
+commit 5d30e5fc8d413d9cd2ca602c20b89f8697dd840e
+Author: krashanoff <lkrashanoff2@gmail.com>
+Date:   Wed Jan 20 23:40:41 2021 -0800
+
+    My next commit
+
+commit 9dddd0d9befc03a7ece73ddcc7a0dd55bac1e941
+Author: krashanoff <lkrashanoff2@gmail.com>
+Date:   Wed Jan 20 23:40:18 2021 -0800
+
+    My first commit
+```
+
+This will show all the commits that contributed to our branch. We can view the commits with
+a graphical view of the branches that were incorporated into it with `git log --graph`. We'll
+be using this later.
+
+### Merging Branches
+
+What if we're happy with where our work is at? We can `merge` in our work with `git merge`.
+If we're currently on the `master` branch for our repository, we can simply run the following:
+
+```sh
+git merge experiment
+```
+
+If the two branches line up (i.e., don't have overlapping work), we will see that Git automatically
+fast forwards the process of merging the work from the other branch onto our own.
+
+### Conflicts
+
+What if we had overlapping work, though? Let's try making the same file on two separate branches and
+see where it takes us when we try to merge them:
+
+```sh
+# create some file on master
+echo 'This is some new file' > newfile
+git add newfile
+git commit -m "Add some new file."
+
+# create and commit our second file
+# on a separate branch
+git checkout experiment
+echo 'This is a DIFFERENT file' > newfile
+git add newfile
+git commit -m "Add a different file."
+
+git checkout master
+```
+
+What is going to happen when we try to merge the two back together? Take a moment to
+try and figure it out!
+
+***
+
+```sh
+$ git merge experiment
+
+CONFLICT (add/add): Merge conflict in newfile
+Auto-merging newfile
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+This doesn't seem good. Let's follow its instructions:
+1. Fix the conflict in `newfile`
+2. Commit the result!
+
+Easy enough. Opening our file, we see:
+
+```
+<<<<<<< HEAD
+This is some new file
+=======
+This is a DIFFERENT file
+>>>>>>> experiment
+```
+
+This is the conflict that Git is talking about. The first portion enclosed in `<<<< HEAD` refers
+to the version of the file on our **head** (i.e., current branch). `=====` denotes the divider
+between versions, and `>>>>> experiment` denotes the part of the file that is **incoming**, or
+from the branch we're trying to merge.
+
+We fix the conflict by combining their contents:
+
+```
+This is some new file
+And this is a DIFFERENT file!
+```
+
+...and committing the result. This resolves the merge conflict.
+
+```sh
+git add newfile
+git commit -m "Fix merge conflict."
+```
+
+Check out `git log --graph` and you can see the result!
+
+```
+*   commit f008b54877b36d39cdd86b38e4a55d7edef75c89 (HEAD -> master)
+|\  Merge: 4d68353 ef752b9
+| | Author: krashanoff <leo@krashanoff.com>
+| | Date:   Wed Jan 20 23:47:20 2021 -0800
+| | 
+| |     Fix merge conflict.
+| | 
+| * commit ef752b92e4efa023d9ecb260a99bb29daca5b037 (experiment)
+| | Author: krashanoff <leo@krashanoff.com>
+| | Date:   Wed Jan 20 23:41:40 2021 -0800
+| | 
+| |     Add a different file.
+| | 
+* | commit 4d68353f8cedd213ccf3ef9476ffa215a6d8f6ec
+|/  Author: krashanoff <leo@krashanoff.com>
+|   Date:   Wed Jan 20 23:41:20 2021 -0800
+|   
+|       Add some new file.
+| 
+* commit 5d30e5fc8d413d9cd2ca602c20b89f8697dd840e
+| Author: krashanoff <leo@krashanoff.com>
+| Date:   Wed Jan 20 23:40:41 2021 -0800
+| 
+|     My next commit
+```
+
+That little joining portion is the *merge*. Nice work!
+
 ### Local **and** Distributed
 
 What if we want to keep a copy of our commits somewhere? What if I want to keep my
@@ -128,11 +294,53 @@ Action | Arguments | Effect
 `get-url` | Name | Gets a URL
 `set-url` | Name + New URL | Sets the new URL
 
-...
+If we know that Oak's copy of the repository is located at `https://git.oakslab.edu/pokedex.git`,
+then we can add it as a remote to our repository with `git remote add oak https://git.oakslab.edu/pokedex.git`.
 
-### Resolving Merge Conflicts
+What if I also wanted to track a copy of the Pokedex from Cynthia? I can do that, too, by adding
+another remote. But wait, Cynthia's copy of the repository is using SSH to sync! Rest assured,
+Git handles that too: `git remote add cynthia leo@cynthia.org:pokedex.git`.
 
-Activity: make a conflict on another branch, then resolve it.
+To **fetch** commits that might have been made on a remote, we can use `git fetch REMOTE_NAME`.
+To integrate those commits into our own current branch, we can **merge** them with
+`git merge REMOTE_NAME/BRANCH_NAME`. Let's update our `working` branch with Cynthia's changes on her `master`
+branch:
+
+```sh
+# just to make sure we're on the right branch
+git checkout working
+
+# fetch the latest commits
+git fetch cynthia
+
+# merge the changes into our branch
+git merge cynthia/master
+```
+
+To simplify this process, you can use `git pull REMOTE_NAME BRANCH_NAME`:
+
+```sh
+git pull cynthia master
+```
+
+Now the latest changes have been applied to our local copy.
+
+If we want to push some changes from our own copy to a remote that we have write access to, we can
+do so with `git push REMOTE_NAME BRANCH_NAME`.
+
+If I have write access to Oak's copy of the repository, for example, I can let him
+know about my latest catches by pushing my `master` branch to his `ash` branch!
+
+```sh
+git switch master
+git push oak ash
+```
+
+### Picking a single commit
+
+What if we wanted to merge the changes in a *single commit*? We can do this
+with `git cherry-pick COMMIT_ID`. It will apply the changes contained in a
+single commit onto your current **head** (branch).
 
 ...
 
@@ -154,11 +362,12 @@ How does Git do all of this? **What is the repository we're working on *really*?
 
 ### What is a repository *really*?
 
-...
+Beyond a folder of code, a repository is really the `.git` folder *inside* your
+project. This is where all your commits and their changes are tracked.
 
 ### What are commits *really*?
 
-...
+Commits are actually compressed summaries of the changes you made to a project over time.
 
 ## How this applies to graphical interfaces
 
@@ -177,7 +386,11 @@ Interface (CLI).
 
 > "But Leo! Where does GitHub come into the picture?"
 
-GitHub is just a place to put your Git repositories! They also provide some handy extra functionality
+GitHub is just a place to put your Git repositories! When you create a Git repository, you
+use `git clone` to clone a copy of the remote repository to your local machine, make changes
+to it, commit those changes, then push them to the remote!
+
+They also provide some handy extra functionality
 to make collaborative coding easier for you, which we'll talk about right now.
 
 ### Forks
@@ -187,18 +400,20 @@ in time to work off of. Think of it as a "super-branch".
 
 ### Pull requests
 
-The big idea with open source software is that we want to be able to collaboratively add and remove
-changes to code. We can do this easily with the notion of pull requests. Back in the day (and still
+You've probably made a pull request or two by now, and understand their omnipresence in open source
+software (OSS).
+
+The big idea with OSS is that we want to be able to easily add and remove
+changes to code collaboratively. This is simplified with the notion of pull requests. Back in the day (and still
 in some large projects!), one would submit changes to a project in the form of an email with a `.patch`
-file. In more modern projects, a pull request is used.
+file.
 
 You *request* to have your changes in your remote repository *pulled* into the base repository.
 
-...
-
 ### Tags, Releases
 
-...
+In Open Source Software, we may want to correlate our Git tags to actual, tangible
+"releases" on GitHub. We can do this by navigating to our 
 
 ## Bonus: Enforcing Linting, Code Style, etc. with Git Hooks
 
