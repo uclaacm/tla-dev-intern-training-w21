@@ -7,7 +7,7 @@
   * Diversity & inclusion
 * Creating a mockup
   * Anchors (no pen tool today)
-  * Boolean groups 
+  * Boolean groups
   * Adding texture
     * Gradients
     * Effects
@@ -36,7 +36,7 @@ There are many considerations when we think about [ethical design](https://www.f
 
 #### Inclusion
 
-What kind of people are you representing in your designs? What roles are you giving to your characters? Think about aspects of identity such as gender, ethnicity, body type, age, and ability status. Try to be aware of whether you are perpetuating stereotypes about what certain people can or should do. Inclusivity is ultimately a complex topic, and educating ourselves on it takes a long time. 
+What kind of people are you representing in your designs? What roles are you giving to your characters? Think about aspects of identity such as gender, ethnicity, body type, age, and ability status. Try to be aware of whether you are perpetuating stereotypes about what certain people can or should do. Inclusivity is ultimately a complex topic, and educating ourselves on it takes a long time.
 
 A rule of thumb I see a lot is that we should not tell stories that aren't ours to tell&mdash;but we can and should support others who are telling their stories, and include a cast of characters in our art that reflects our audience. Be open to listening and learning from members of communities that you want to portray.
 
@@ -44,7 +44,7 @@ Below is a beautiful graphic from [Microsoft's accessibility guides](https://www
 
 ![Inclusive Design Table](https://images.ctfassets.net/1khq4uysbvty/3tRKmL2AfYAc4ysUQSiGAg/d44f450ea7660ac7ef132e2e90a2c38f/Inclusive_Design_Table.png?&w=736)
 
-When in doubt, consider respectfully reaching out to organizations who offer their services for diversity consultation, and compensate them for their time. 
+When in doubt, consider respectfully reaching out to organizations who offer their services for diversity consultation, and compensate them for their time.
 
 And if you're a struggling college student, start with free guides like those by [@commandurr](https://www.instagram.com/p/CBYU37fFzmP/) (one of my favorite web comic artists), [Kat Tsai](https://chuwenjie.tumblr.com/post/158694460814) of Steven Universe, [Jessi Eoin](https://medium.com/@jbeoin/how-to-draw-disabled-people-53cc48434532), or [@Phobos-Romulus](https://www.deviantart.com/phobos-romulus/art/Female-Body-Types-Tutorial-468154376). You can still support artists for free by following, liking, and reposting their stuff:)
 
@@ -52,23 +52,23 @@ Inclusivity isn't a question of "political correctness": plenty of quantitative 
 
 ### A note on trendy trends
 
-What do you think about hamburger menus (the three lines that indicate a menu, often found on apps)? What about GIFs, or icons? 
+What do you think about hamburger menus (the three lines that indicate a menu, often found on apps)? What about GIFs, or icons?
 
 Designers (including me) often get caught up in what looks cool and forget to consider what's usable. Hamburger menus have been shown to unnecessarily hide useful information. Too-fast GIFs can be triggering to users prone to seizures.
 
 And did you know that few icons are truly universal? Other than expressions such as :smile:, icons can be difficult for international, elderly, and other populations to understand, especially those who are not as familiar with what many assume to be a shared code.
 
-Trends exist for a reason&mdash;they're quite good in some circumstances. Hamburger menus are great for tiny phone screens. Icons are nice for illustrating menu items and other options, but the best route is to label most icons redundantly with text. 
+Trends exist for a reason&mdash;they're quite good in some circumstances. Hamburger menus are great for tiny phone screens. Icons are nice for illustrating menu items and other options, but the best route is to label most icons redundantly with text.
 
 We will cover much more on the conflict between trends and accessibility in week 6, but try to keep in mind how your designs may have unintentional consequences.
 
 #### Plagiarism
 
-When you use someone else's work as inspiration, are you plagiarizing? 
+When you use someone else's work as inspiration, are you plagiarizing?
 
 Many cases of plagiarism are unintentional. However, it is often malicious. There are a ton of examples on the internet of up-and-coming artists' work getting stolen.
 
-One of the most famous examples is the work of Barbara Kruger. 
+One of the most famous examples is the work of Barbara Kruger.
 
 ![Work by Barbara Kruger and Roberto Barni in Italy, white text on red background.](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Senza_titolo_%28Barbara_Kruger%29_e_Vacina_%28Roberto_Barn%29.jpg/800px-Senza_titolo_%28Barbara_Kruger%29_e_Vacina_%28Roberto_Barn%29.jpg)
 
@@ -80,7 +80,7 @@ The line between inspiration and plagiarism can seem fuzzy, but in general: if y
 
 ## Further reading
 
-As you know, things on the web are never permanent. To keep up with the trends, I recommend just staying aware of changes that are happening around you. Why did Google change their icons again? What does the new iPhone look like? 
+As you know, things on the web are never permanent. To keep up with the trends, I recommend just staying aware of changes that are happening around you. Why did Google change their icons again? What does the new iPhone look like?
 
 The Community tab on your Figma home page is a great place to find neat things that the community is creating. You can also find inspiration from artists working in other media on Instagram, Pinterest, and more.
 
@@ -116,7 +116,7 @@ Click the question mark at the bottom right hand corner of your workspace and cl
 | `Ctrl` + scroll           | Zoom in and out                                              |
 | `Space` + drag or scroll  | Pan around the screen                                        |
 
-## 
+##
 
 ## Author's Note
 
@@ -134,7 +134,7 @@ Do you remember the elements of art and principles of design from elementary sch
 
 **Proportion/Scale**
 
-**Harmony**: we need to make our piece visually coherent & consistent. One way we can do this is by using [libraries and assets](https://help.figma.com/hc/en-us/articles/360041051154-Get-started-with-Team-Library). Libraries are mainly for paid accounts, but 
+**Harmony**: we need to make our piece visually coherent & consistent. One way we can do this is by using [libraries and assets](https://help.figma.com/hc/en-us/articles/360041051154-Get-started-with-Team-Library). Libraries are mainly for paid accounts, but
 
 Relevant shortcuts: `Alt` + drag
 
@@ -154,4 +154,4 @@ Relevant shortcuts: `Alt` + drag
 
 **Space**: importance of white space
 
-**Value**: 
+**Value**:
