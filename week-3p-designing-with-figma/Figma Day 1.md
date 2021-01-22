@@ -20,7 +20,6 @@
   * White space!
 * [Basic prototyping](#basic-prototyping)
   * But first, components
-  * Styles
   * Connections
   * Preview
 
@@ -38,15 +37,15 @@ Throughout this tutorial, I will be referring to different toolbars. I don't kno
 
 Menu bar:
 
-![A bar containing icons for mouse, frame, shape, pen, text, pan, and comment](C:\Users\notka\Documents\GitHub\figma-lesson\images\menu.PNG)
+![A bar containing icons for mouse, frame, shape, pen, text, pan, and comment](images\menu.PNG)
 
 Layers panel:
 
-![A panel containing groups of art layers](C:\Users\notka\Documents\GitHub\figma-lesson\images\layers.PNG)
+![A panel containing groups of art layers](images\layers.PNG)
 
 Options panel:
 
-![A panel containing fields for X and Y coordinates, alignment, ](C:\Users\notka\Documents\GitHub\figma-lesson\images\options.PNG)
+![A panel containing fields for X and Y coordinates, alignment, ](images\options.PNG)
 
 ## Planning
 
@@ -58,12 +57,10 @@ Think back to when you were in English class in high school, wondering why you w
 
 Design is visual storytelling. The process of creating a successful design should be analogous to writing a successful essay: your user will be introduced to your product, interact with it, and should come away feeling like they have had a coherent experience. 
 
-When you wrote five-paragraph essays, you were probably told to always "tie your evidence back to your thesis". When we 
-
-In order to become consistent, we have to ask questions of ourselves:
+When you wrote five-paragraph essays, you were probably told to always "tie your evidence back to your thesis". When we design, we should also make sure that we always tie our designs back to these two questions:
 
 * What is the takeaway? (or, what do we want our audience to gain from our product that they hadn't had before?)
-* What is the package? (or, how are we presenting this product? What angle are we taking? How do we separate ourselves from similar organizations or products?)
+* What is the theme? (or, what angle are we taking? How are we "packaging" our product to consumers? How do we separate ourselves from similar organizations or products?)
 
 Spotify's answers to the above questions would be:
 
