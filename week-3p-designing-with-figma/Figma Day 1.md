@@ -38,15 +38,15 @@ Throughout this tutorial, I will be referring to different toolbars. I don't kno
 
 Menu bar:
 
-![A bar containing icons for mouse, frame, shape, pen, text, pan, and comment](images\menu.png)
+![A bar containing icons for mouse, frame, shape, pen, text, pan, and comment](images/menu.png)
 
 Layers panel:
 
-![A panel containing groups of art layers](images\layers.png)
+![A panel containing groups of art layers](images/layers.png)
 
 Options panel:
 
-![A panel containing fields for X and Y coordinates, alignment, ](images\options.png)
+![A panel containing fields for X and Y coordinates, alignment, ](images/options.png)
 
 ## Planning
 
@@ -132,7 +132,9 @@ Let's have a look at some popular layouts.
 
 ![Designs using one column include National Geographic](images/single-column.png)
 
-Single-column design is probably the most popular design because it is so simple. You can take this literally, by having all of the content on your entire website on one column&mdash;but you might find that you need to split up the content into multiple pages, especially if you have a lot of content.
+**Single-column** 
+
+Single-column design is probably the most popular design because it is so simple. You can take this literally, by having all of the content on your entire website on one column&mdash;but you might find that you need to split up the content into multiple pages, especially if you have a lot of content. 
 
 In that case, each page itself can still have a single-column layout, if you want.
 
@@ -171,8 +173,6 @@ Many designers today use the "mobile first" philosophy, meaning that we try to m
 This makes sense, since at the mobile level, design real estate is *much* more limited, and it's easier to adapt something constrained (mobile) to something less constrained (desktop) than the other way around.
 
 For the first iteration of our learning labs, we're not going to worry too much about responsive design. However, this is a good design concept to keep in mind for future projects.
-
-
 
 ## Creating a wireframe
 
