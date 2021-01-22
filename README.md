@@ -8,18 +8,18 @@ Notes + resources for Teach LA's W21 batch of dev team interns!
 
 1. Week 1 - intros!
 2. Week 2
-    * Dev: thinking in React
-    * PM: introduction to PM
+    * [Dev: thinking in React (just the functional portion)](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-2d-thinking-in-react)
+    * [PM: introduction to PM](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-2p-intro-to-pm) w/ Rucha
 3. Week 3
-    * Dev: `git` good at Git
-    * PM: web design w/ Figma
+    * [Dev: `git` good at Git](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-3d-git) w/ [Leo](https://krashanoff.com/) + some more [thinking in React](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-2d-thinking-in-react)
+    * [PM: Figma & Web Design](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-3p-designing-with-figma) w/ Karen
 4. Week 4
     * Dev + PM: maintaining good projects
 5. Week 5
     * Dev + PM: low-stress knowledge drop + mid-quarter presentations
 6. Week 6
     * Dev: tests and CI + CD
-    * PM: web design pt 2 electric boogaloo
+    * PM: Figma & Web Design Pt. 2 Electric Boogaloo w/ Karen
 7. Week 7
     * Dev + PM: accessibility, responsiveness, and best practices
 8. Week 8
