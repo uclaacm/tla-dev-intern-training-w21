@@ -7,6 +7,7 @@
   * Storytelling and flow
   * Mood boards
   * Color
+  * Style guides
   * Common web layouts
     * A note on responsive design
 * [Creating a wireframe](#creating-a-wireframe)
@@ -59,15 +60,17 @@ Design is visual storytelling. The process of creating a successful design shoul
 
 When you wrote five-paragraph essays, you were probably told to always "tie your evidence back to your thesis". When we design, we should also make sure that we always tie our designs back to these two questions:
 
+* What is our product?
 * What is the takeaway? (or, what do we want our audience to gain from our product that they hadn't had before?)
-* What is the theme? (or, what angle are we taking? How are we "packaging" our product to consumers? How do we separate ourselves from similar organizations or products?)
+* What is the story? (or, what angle are we taking? How are we "packaging" our product to consumers? How do we separate ourselves from similar organizations or products?)
 
-Spotify's answers to the above questions would be:
+For a learning lab such as the Buffer Buffet, the answers to the above questions would be:
 
-1. Music streaming
-1. Hyper-personalization with a social-media aspect
+1. An interactive educational game
+1. The importance of preventing buffer overflow
+1. A restaurant or "buffet" as an analogy to computers
 
-We will use the answers to these questions to guide construction of mood boards, style guides, and layouts, which we will cover next.
+We can use the answers to these questions to guide construction of mood boards, style guides, and layouts, which we will cover next.
 
 ### Research and mood boards
 
