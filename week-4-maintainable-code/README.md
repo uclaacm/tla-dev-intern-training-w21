@@ -2,6 +2,17 @@
 
 We ran this workshop with all of our interns (dev and PM), but it was much more discussion-based and activity-based. Here are some brief notes and examples we went through.
 
+* [Warmup Examples](#warmup-examples)
+* [General Discussion Topics](#general-discussion-topics)
+* [Refactoring Code, Internal](#refactoring-code-internal)
+  * [Static - CSS/SCSS](#static---cssscss)
+  * [Editor (short) - JS/React](#editor-short---jsreact)
+  * [Editor (long) - JS/React](#editor-long---jsreact)
+* [Refactoring Code, External](#refactoring-code-external)
+  * [JS - Banking (EJS)](#js---banking-ejs)
+  * [React - Custom Hooks](#react---custom-hooks)
+  * [React - HOC](#react---hoc)
+
 ## Warmup Examples
 
 [Source: Refactoring JS](https://refactoringjs.com/)
@@ -62,6 +73,38 @@ function showPrimes(n) {
 }
 
 ```
+
+## General Discussion Topics
+
+Some questions:
+
+* what makes good code? what makes bad code?
+* how important are "rules of thumb" to you?
+* do you think there's always one right way to do something?
+
+There are quite a few goals in software development:
+
+* performance and efficiency
+* readability
+* writability
+* maintanability
+* testability
+* parralelization
+* paradigms (e.g. OOP, FP, etc.)
+* and more!
+
+Let's talk about some terms in software eng/dev (obviously non-exhaustive):
+
+* refactor
+* abstraction
+* testing:
+  * unit testing
+  * test-driven development
+* functional programming
+  * side effect
+  * pure function
+* composition
+* incremental development
 
 ## Refactoring Code, Internal
 
@@ -431,8 +474,6 @@ function transfer(from, amount) {
   accounts[getAccount()] += amount;
 }
 ```
-
-### React -
 
 ### React - Custom Hooks
 
