@@ -4,6 +4,7 @@ We ran this workshop with all of our interns (dev and PM), but it was much more 
 
 * [Warmup Examples](#warmup-examples)
 * [General Discussion Topics](#general-discussion-topics)
+* [Reflections From Matt](#reflections-from-matt)
 * [Refactoring Code, Internal](#refactoring-code-internal)
   * [Static - CSS/SCSS](#static---cssscss)
   * [Editor (short) - JS/React](#editor-short---jsreact)
@@ -105,6 +106,36 @@ Let's talk about some terms in software eng/dev (obviously non-exhaustive):
   * pure function
 * composition
 * incremental development
+
+## Reflections From Matt
+
+This is a *pretty opinionated* section, and just the main points of what Matt will talk about. No detailed notes, sorry!
+
+On general software dev:
+
+* automation, CI/CD is great!
+* Matt likes functional programming, but is not die-hard
+* metrics are not an end goal, especially DRY and LOC
+* good documentation is so important!!
+* readability, writability, and efficiency are very different things
+* refactor as you go - the boy scout rule!
+* deep language knowledge pays dividends
+
+On student projects:
+
+* **code quality isn't as important as pushing code**
+* small, incremental changes are great for morale and easier to CR
+* cyclical nature of dev teams -> documentation, automated systems, handoff, etc.
+* scale/scalability is almost never an issue
+* service overload is very real; centralization helps!
+
+On training and mentoring:
+
+* soft deadlines (at least) are needed
+* frequent check-ins are good :)
+* training always takes longer than you think it does
+* distinct roles are super important!
+* practice makes permanent, but not perfect
 
 ## Refactoring Code, Internal
 
