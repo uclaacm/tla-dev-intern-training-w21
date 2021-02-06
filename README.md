@@ -14,9 +14,9 @@ Notes + resources for Teach LA's W21 batch of dev team interns!
     * [Dev: `git` good at Git](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-3d-git) w/ [Leo](https://krashanoff.com/) + some more [thinking in React](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-2d-thinking-in-react)
     * [PM: Figma & Web Design](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-3p-designing-with-figma) w/ Karen
 4. Week 4
-    * Dev + PM: maintaining good projects
+    * [Dev + PM: maintaining good projects](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-4-maintainable-code)
 5. Week 5
-    * Dev + PM: low-stress knowledge drop + mid-quarter presentations
+    * [Dev + PM: low-stress knowledge drop + mid-quarter presentations](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-5-brief-js-ecosystem)
 6. Week 6
     * Dev: tests and CI + CD
     * PM: Figma & Web Design Pt. 2 Electric Boogaloo w/ Karen
