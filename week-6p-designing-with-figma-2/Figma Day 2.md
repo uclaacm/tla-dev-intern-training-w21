@@ -60,7 +60,7 @@ Inclusivity isn't a question of "political correctness": plenty of quantitative 
 
 In the next section, we'll see some examples of how Learning Labs might think about accessibility.
 
-#### Trends versus accessibility
+#### Aesthetics versus accessibility
 
 What do you think about hamburger menus (the three lines that indicate a menu, often found on apps)? What about GIFs, or icons?
 
@@ -69,6 +69,10 @@ Designers (including me) often get caught up in what looks cool and forget to co
 And did you know that [few icons are truly universal](https://www.nngroup.com/articles/icon-usability/)? Other than expressions such as :smile:, icons can be difficult for international, elderly, and other populations to understand, especially those who are not as familiar with what many assume to be a shared code.
 
 Trends exist for a reason&mdash;they're quite good in some circumstances. Hamburger menus are great for tiny phone screens. Icons are nice for illustrating menu items and other options, but the best route is to label most icons redundantly with text.
+
+Although it may not seem that way, accessible designs are also often more aeshetically pleasing: they are cleaner, more balanced, and easier on the eye.
+
+Many applets and plugins exist on the web for checking accessibility, but 
 
 #### Plagiarism
 
