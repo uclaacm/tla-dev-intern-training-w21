@@ -18,12 +18,9 @@
   * Pages
   * Naming conventions + batch rename
   * Comments
-* Advanced prototyping
-  * Animation is not a Figma thing
-  * Embedding
+  
   * Exporting
 * Further reading
-  * Keyboard shortcut cheat sheet
 
 
 
@@ -226,19 +223,53 @@ Other options include free icon sets found in the Figma community or on the web,
 
 #### The magic keys
 
+There are two VERY important keyboard keys in design applications. 
+
+The first is `Alt`. It can:
+
+1. Resize objects from center (try pressing `Alt` before dragging on a corner or side anchor)
+1. Draw shapes from center (when you are actively drawing a shape and press `Alt`)
+1. Change anchor points from mirrored to unmirrored (this is a topic that we won't have time to cover today)
+1. Duplicate objects (when you press `Alt` before dragging)
+
+The second is `Shift`. It can:
+
+1. Move objects "stepwise" (press `Shift` + arrow keys to move objects in 10-pixel increments, instead of 1-pixel increments. You can adjust step size in Preferences)
+1. Resize objects proportionately 
+1. Rotate "stepwise" (press `Shift` while rotating to snap to the nearest 15 degrees)
+1. Draw objects proportionately (when you are actively drawing a shape and press `Shift`)
+
+You can use both keys together for a very precise designing experience.
+
 #### Pages 
 
+In my workflow, I usually start off on a page by churning out ideas. Then, I label this page "Drafts" and make a fresh page named "Final" to show reviewers like managers or colleagues. More fine-tuned versioning occurs with longer projects. Those familiar with GitHub (where this project is located...) will understand the fear of losing previous work.
 
+Pages are located at almost the top of the layers panel.
+
+![](images/pages.PNG)
 
 #### Naming 
 
+Press `Ctrl` + `R` to batch rename multiple selected layers. You can even set 
+
+![](images/rename.PNG)
+
 #### Comments
 
-#### Animations?
+Design is very rarely successful without collaboration. Share your file with other designers using the Share button on the top right. (Thankfully, the interface is the same as the Google suite and other familiar software.)
 
+The great thing about Figma is that it supports multiple users viewing and editing the same file simultaneously.
 
+![](images/share.PNG)
 
+During design review meetings, I like to take notes (or else feedback goes in one ear and out the other). Press `C` to access the comment tool in Figma. Click anywhere in your workspace to leave a note! You can also set email notifications to keep up on important conversations.
 
+You'll notice that the options panel changes completely: you can later use this to browse all comments in a file, including archived comments.
+
+Comments are hidden unless you have selected the Comment tool.
+
+![](images/comment.PNG)
 
 ## Further reading
 
@@ -251,41 +282,3 @@ Other options include free icon sets found in the Figma community or on the web,
 ### Keyboard shortcuts
 
 Click the question mark at the bottom right hand corner of your workspace and click Keyboard Shortcuts for a full list. 
-
-## Author's note
-
-Do you remember the elements of art and principles of design from elementary school? They're a pretty useful framework to make sure you are hitting all the right notes in a design. Click on each principle/element to see which Figma concept relates to it.
-
-#### The Principles of Design
-
-**Pattern**: Figma [components](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-Components-in-Figma).
-
-**Contrast**: accessibility & color contrast.
-
-**Emphasis**: hierarchy.
-
-**Balance**: constraints & positioning. frames & [presets](https://help.figma.com/hc/en-us/articles/360041539473-Frames-in-Figma#Create_frames)?
-
-**Proportion/Scale**
-
-**Harmony**: we need to make our piece visually coherent & consistent. One way we can do this is by using [libraries and assets](https://help.figma.com/hc/en-us/articles/360041051154-Get-started-with-Team-Library). Libraries are mainly for paid accounts, but
-
-Relevant shortcuts: `Alt` + drag
-
-**Rhythm/Motion**: animations, videos, & [prototyping](https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma)
-
-#### The Elements of Art
-
-**Line**: line options, rounding.
-
-**Shape**: [boolean groups](https://help.figma.com/hc/en-us/articles/360039957534-Boolean-Operations)
-
-**Form**: gradients.
-
-**Color**: color theory, coming up with palettes.
-
-**Texture**: effects and blending modes.
-
-**Space**: importance of white space
-
-**Value**:
