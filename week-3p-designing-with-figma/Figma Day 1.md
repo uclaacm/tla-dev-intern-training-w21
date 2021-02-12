@@ -14,17 +14,15 @@
   * Frames and presets
   * Shape tools and pencil
   * Auto layout and alignment
-  * The magic keys: `Alt` and `Shift`
 * [User experience + accessibility](#what-makes-good-design) part 1
   * Readable body text
-  * A note on icons + hamburger menus
   * White space!
 * [Basic prototyping](#basic-prototyping)
   * But first, components
   * Connections
   * Preview
 
-
+* [Further reading](#sources-and-further-reading)
 
 ## What is Figma?
 
@@ -226,7 +224,7 @@ However, the minimum requirements for good communication will differ for differe
 
 Successful UX design will be accessible, and vice versa.
 
-#### Readable body text
+### Readable body text
 
 The worst designs that I see usually involve unreadable text. Remember when I said that there are some rules that you really shouldn't get creative with? Well, anything to do with body text (that is, the main content of your page, such as an article or blog post) should not be messed with.
 
@@ -353,16 +351,17 @@ As a final note, the Inspect tab next to the Prototype tab is useful for develop
 ## Sources and further reading
 
 * [Web layouts (Nick Babich/Adobe XD)](https://xd.adobe.com/ideas/principles/web-design/11-website-layouts-that-made-content-shine-in-2019/)
-
 * [Content organization (Lauren Hooker/Elle and Company Design)](https://www.elleandcompanydesign.com/blog/organizing-content)
-
+* [Color theory (Christian Vizcarra/UX Collective)](https://uxdesign.cc/all-you-need-to-know-about-colors-in-ui-design-theory-practice-235179712522)
 * A really cool feature we didn't have time to cover today: [Constraints](https://help.figma.com/hc/en-us/articles/360039957734-Apply-Constraints-to-define-how-layers-resize)
 
 ### A note on keeping up
 
-As you know, things on the web are never permanent. To keep up with the trends, I recommend just staying aware of changes that are happening around you. Why did Google change their icons again? What does the new iPhone look like?
+As you know, things on the web are never permanent. To keep up with the trends, I recommend just staying aware of changes that are happening around you. As you're browsing the web, ask: Why did Google change their icons again? What does the new iPhone look like?
 
-The Community tab on your Figma home page is a great place to find neat things that the community is creating. You can also find inspiration from artists working in other media on Instagram, Pinterest, and more.
+Additionally, the Community tab on your Figma home page is a great place to find neat things that the community is creating. (Similar sites include [dribbble](https://dribbble.com) and [Behance](https://www.behance.net).) You can also find inspiration from artists working in other media on Instagram, Pinterest, and more.
+
+For skills- and feature-related tips and tricks, Figma recently changed the location of their community forum from [Spectrum](https://spectrum.chat/figma) to the [Figma Support Forum](https://forum.figma.com/). Check it out to explore advanced Figma topics!
 
 ### Keyboard shortcuts
 
