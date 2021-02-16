@@ -18,14 +18,14 @@ Notes + resources for Teach LA's W21 batch of dev team interns!
 5. Week 5
     * [Dev + PM: low-stress knowledge drop + mid-quarter presentations](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-5-brief-js-ecosystem)
 6. Week 6
-    * Dev: tests and CI + CD
-    * PM: Figma & Web Design Pt. 2 Electric Boogaloo w/ Karen
+    * Dev: [tests and CI + CD](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-6d-ci-cd-tests)
+    * PM: [Figma & Web Design Pt. 2 Electric Boogaloo w/ Karen](https://github.com/uclaacm/tla-dev-intern-training-w21/blob/main/week-6p-designing-with-figma-2/Figma%20Day%202.md)
 7. Week 7
-    * Dev + PM: accessibility, responsiveness, and best practices
-8. Week 8
     * Dev + PM: intro to backend + databases
+8. Week 8
+    * Dev + PM: accessibility, responsiveness, and best practices
 9. Week 9
-    * TBD
+    * TBD - likely dev + pm, intro to jekyll + the rest of the teach la tech stack
 10. Week 10 - presentations!
 
 ## Licensing
