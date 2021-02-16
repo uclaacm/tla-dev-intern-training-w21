@@ -2,13 +2,32 @@
 
 ## Overview
 
-...
+We talk about some of the under-the-hood tooling and testing practices that can make our lives easier and make sure that our code quality is great! In particular, we wanted to touch on topics that are rarely seen in student organization dev teams: automating continuous integration and continuous development (CI/CD), and testing our (JS/React) code with Enzyme and Jest.
 
 ## Table of Contents
 
-...
+* [Table of Contents](#table-of-contents)
+* [CI &amp; CD - Abstract](#ci--cd---abstract)
+* [Testing in Javascript (with Jest)](#testing-in-javascript-with-jest)
+  * [What is testing? Why testing is important?](#what-is-testing-why-testing-is-important)
+    * [Integration vs Unit Tests](#integration-vs-unit-tests)
+    * [Test-Driven Development](#test-driven-development)
+  * [Testing with Jest](#testing-with-jest)
+    * [The "Hello World"](#the-hello-world)
+    * [Testing React Components with Jest and Enzyme](#testing-react-components-with-jest-and-enzyme)
+  * [Mocking Browser Interactions](#mocking-browser-interactions)
+  * [Dependency Injection et al.](#dependency-injection-et-al)
+  * [And... Writing Test-Friendly Code](#and-writing-test-friendly-code)
+  * [Further Reading &amp; References](#further-reading--references)
+* [CI/CD in Practice: Linters](#cicd-in-practice-linters)
+  * [Installing and Configuring Stylelint](#installing-and-configuring-stylelint)
+  * [Automating Stylelint as a CI Action](#automating-stylelint-as-a-ci-action)
+  * [Stylelint Addendum: SASS](#stylelint-addendum-sass)
+  * [Zipping through ESLint](#zipping-through-eslint)
+  * [Next Steps: Commit Hooks](#next-steps-commit-hooks)
+  * [An Addendum: Editor Extensions](#an-addendum-editor-extensions)
 
-## CI & CD
+## CI & CD - Abstract
 
 We've previously (briefly) mentioned the concepts of **Continuous Integration** and **Continuous Deployment**, which automates the versioning, dependency management, and deployment of your software. Tests are a big part of that! Often times, deployment services are configured so that they only deploy *if the tests pass*. Writing solid tests are a great part of making sure that you never deploy broken code!
 
@@ -298,9 +317,236 @@ We could still test the click functionality by rendering and checking for change
 
 To make testing easier, writing code with tests in mind will ultimately improve the maintainability and readability of one's codebase, and keep tests predictable.
 
-## Further Reading & References
+### Further Reading & References
+
 * [Jest docs](https://jestjs.io/docs/en/getting-started)
 * [Enzyme docs](https://enzymejs.github.io/enzyme/docs/api/)
 * [chai, an assertion library for Node](https://www.chaijs.com/)
 * [Dependency Injection: Practical Examples for Testing and Refactoring in JavaScript](https://medium.com/@daniel.oliver.king/dependency-injection-practical-examples-for-testing-and-refactoring-in-javascript-3cb5b58b50be)
 * ["React Has Built-In Dependency Injection"](https://marmelab.com/blog/2019/03/13/react-dependency-injection.html)
+
+## CI/CD in Practice: Linters
+
+*This is a writeup of a live workshop that we did*.
+
+Let's get some practice implementing a CI/CD workflow in our projects! In this case, we're going to be implementing a linter: a tool that checks the validity of your code without running it ("static analysis" in the lingo). We'll be exploring two linters - [Stylelint](https://stylelint.io/) for CSS, and [ESLint](https://eslint.org/) for JS - and talk about how to implement them with GitHub Actions. We'll also just briefly mention next steps, using husky and lint-staged.
+
+We'll first start with Stylelint!
+
+### Installing and Configuring Stylelint
+
+This walks us through the [Getting Started](https://stylelint.io/user-guide/get-started) tutorial for stylelint.
+
+To install stylelint in our node project, we can do the typical node installation setup.
+
+```sh
+$ npm install --save-dev stylelint stylelint-config-standard
+```
+
+This should update your `package.json` and `package-lock.json`, which you should commit the changes to.
+
+Then, we create `.stylelintrc.json` file. Often times, files with `rc` in them are configuration files for tools like Stylelint!
+
+```json
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": ["dist/*", "node_modules/*"]
+}
+```
+
+This is a simple configuration file that does two things: it "extends" the standard stylelint configuration, which has many default rules set, and it tells stylelint to ignore the `dist` and `node_modules` folders, since that's not code that we write!
+
+If you'd like, you can check if it works with
+
+```sh
+$ npx stylelint \"**/*.css\" \"**/*.scss\"
+```
+
+This means "use npm to run stylelint on all files that end with `.css` or `.scss`".
+
+You may get some errors on your code, which is totally fine - this is what we're supposed to check for! Some of these errors are what we call "autofixable", which means stylelint can fix them for you. To do that, run `stylelint` with the `--fix` option:
+
+```sh
+$ npx stylelint --fix \"**/*.css\" \"**/*.scss\"
+```
+
+Some errors, like duplicate CSS properties in one class, are not autofixable. You'll have to pop in to the files and fix them yourself.
+
+The last thing we'll mention is that running these commands is lengthy! We can scope them as an `npm` script. Edit the `scripts` field of your `package.json` like so:
+
+```json
+// ...
+"scripts": {
+  // ...
+  "lint-css": "stylelint \"**/*.css\" \"**/*.scss\"",
+  "lint-css-fix": "stylelint --fix \"**/*.css\" \"**/*.scss\"",
+  // ...
+},
+```
+
+Now, if you run `npm run lint-css` or `npm run lint-css-fix`, it does those commands for you. Neat!
+
+### Automating Stylelint as a CI Action
+
+Great! Now, we want to make sure that Stylelint passes before every branch is merged into `main`; this can ensure consistent code style, and with Stylelint in particular, help us catch some nasty bugs.
+
+To do this, we'll use GitHub Actions as our CI provider. In `.github/workflows`, make a file called `lint-css.yml` with this:
+
+```yaml
+name: Lint CSS
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run lint-css
+
+```
+
+What does this do? It configures an Action! Reading it from top-down:
+
+* the action is called "Lint CSS"
+* it runs on every push
+* it has one "job"
+* in the job, we are running on `ubuntu-latest` (a linux distro) and with node version `14.x` (the LTS of time of writing)
+* there are several steps in our action
+* first, we use someone else's action, GitHub's `checkout`. this clones our repository.
+* then, we use another action someone else made: `setup-node`. this, well, sets up node.
+* then, we run the command `npm install`
+* finally, we run the command `npm run lint-css`, which we defined!
+
+Once you add and commit this, it will run automatically on every push to your project! In particular, if `npm run lint-css` (or any other command) fails, Actions will let you know - which is really helpful in reviewing code!
+
+### Stylelint Addendum: SASS
+
+If you're using SASS/SCSS, you'll need to do a few extra things to get stuff to work with `stylelint`.
+
+First, install a stylelint plugin. Stylelint has many different plugins that let you customize it to what you need!
+
+```
+$ npm install --save-dev stylelint-scss
+```
+
+Next, we'll slightly modify our json configuration file to enable our plugin, and to override one of our rules (and to use the `SCSS` version of it instead):
+
+```json
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "ignoreFiles": ["dist/*", "node_modules/*"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true
+  }
+}
+```
+
+Now this should work with SASS!
+
+### Zipping through ESLint
+
+Now that you've gotten a flavour of things with Stylelint, using ESLint shouldn't be too tricky either. We'll go a bit less in-depth with things, but the process is the same.
+
+(again, we're walking you through [getting started](https://eslint.org/docs/user-guide/getting-started))
+
+First, install stuff:
+
+```sh
+$ npm install eslint --save-dev
+```
+
+ESLint comes with a handy initializing script.
+
+```sh
+$ npx eslint --init
+```
+
+This wizard gives you some options to fill out! Use your best judgement here, but you can always edit the configuration file later.
+
+Eventually, once everything is done, you'll notice there's a `.eslintrc.{js,yml,json}` file (whichever extension you picked). You can always edit this later; for more in-depth resources, check out [Configuring ESLint](https://eslint.org/docs/user-guide/configuring/).
+
+And of course, you can run `eslint`, and use the `--fix` option:
+
+```sh
+$ npx eslint \"**/*.js\"
+...
+$ npx eslint --fix \"**/*.js\"
+```
+
+(this runs on all files with the `.js` extension)
+
+We can once again add these to our `package.json`:
+
+```json
+// ...
+"scripts": {
+  // ...
+  "lint-js": "eslint \"**/*.js\"",
+  "lint-js-fix": "eslint --fix \"**/*.js\"",
+  // ...
+},
+```
+
+If you're using Create React App, you don't actually need to create an action to run ESLint - Create React App does that for you already (on `npm run build`). So, existing CI pipelines (like the one in the Teach LA react starter) will work out of the box.
+
+If you did want to manually set up a JS linter anyways,
+
+```yaml
+name: Lint JS
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run lint-js
+
+```
+
+And that's it! Configuring ESLint can be a bit finnickier than Stylelint as there are just *so many options*, and you may have to install plugins for things to work with Jest, React, etc. However, ESLint is an insanely helpful tool - it catches bugs much earlier in the development process, which is crucial in all projects!
+
+### Next Steps: Commit Hooks
+
+There's one last thing that we didn't explicitly mention in the live presentation, but that I want to touch on briefly. This is (pre-)commit hooks - code that lets you run some code right before a `git commit` is made.
+
+This solves two problems:
+
+* it's annoying to run `npx run lint-css-fix` before committing
+* you may want to force the user to pass some tests (linting or otherwise) before committing
+
+This is a very popular software development paradigm. There are quite a few different approaches to doing this, but one of the most popular is with the [`lint-staged`](https://github.com/okonet/lint-staged) library, which can run your linters (and other tests) only against the files that change on every commit.
+
+If you install this after the steps above, it actually works out of the box with this command:
+
+```sh
+$ npx mrm lint-staged
+```
+
+neat! Beyond that though, you can always [read the examples](https://github.com/okonet/lint-staged#examples) to configure how you'd like it.
+
+### An Addendum: Editor Extensions
+
+A quick note: many popular editors and IDEs (like VSCode) have plugins for stylelint and ESLint that work when you have `.stylelintrc` or `.eslintrc` files in your directory. They can syntax-highlight errors, auto-format code, and provide quick fixes to errors. I encourage you to check them out, they make life convenient!
