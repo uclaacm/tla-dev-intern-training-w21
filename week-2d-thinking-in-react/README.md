@@ -27,7 +27,7 @@ Here are Matt's notes for the relatively erratic "thinking in react" workshop fo
 
 ## Blitzing over React basics
 
-In this section, Matt basically recaps everything from the QWER Hacks tutorial videos. For written notes, please check out the [QWER Hacks '21 React 101 Workshop](https://github.com/malsf21/qwerhacks-21-workshops/tree/main/react/main-workshop).
+In this section, Matt basically recaps everything from the QWER Hacks tutorial videos. For written notes, please check out the [QWER Hacks '21 React 101 Workshop](https://github.com/mattxwang/qwerhacks-21-workshops/tree/main/react/main-workshop).
 
 ## Functional programming in React
 
