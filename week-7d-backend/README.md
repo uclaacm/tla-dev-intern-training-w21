@@ -1,12 +1,13 @@
 # Intro to Backend
 
-[Link to video of the last talk I gave.](https://www.youtube.com/watch?v=kwy4U0980Eg)
+* [Link to video of the last talk I gave.](https://www.youtube.com/watch?v=kwy4U0980Eg)
+* [Some slides to accompany](https://docs.google.com/presentation/d/1kvo8d2qLvx4pVm7T6aNCNGPPsBWgTQjZIiLRT6wPgOk/edit?usp=sharing)
 
 What we've been doing up until now is learning skills that build out our **frontend** toolkit. However, like an angler fish, frontend development is the beautiful light that obscures the beast that is often the backend.
 
 Have you ever wanted to build a messaging app, or something with storage that persists beyond localstorage, or something that requires communication between clients? Then you need a backend! In this talk, we will answer the following questions:
 * Why do we need a backend?
-* Diversity in the backend - why is it neat to work on?
+* Variety in the backend - why is it neat to work on?
 * What are some common backend frameworks and patterns?
 * How can I build a backend?
 * How can I make my backend work with my frontend?
@@ -28,18 +29,7 @@ By the end of this talk, you'll be able to think at a high level about the parti
     * [RESTful](#restful)
     * [GraphQL](#graphql)
 * [Common Backend Frameworks](#common-backend-frameworks)
-* [Building a Basic Backend](#building-a-basic-backend)
-    * [Prototyping](#prototyping)
-    * [Setting up the server](#setting-up-the-server)
-    * [Middleware](#middleware)
-        * [express.json()](#expressjson)
-        * [What's CORS?](#whats-cors)
-    * [Running the server](#running-the-server)
-    * [Adding some functionality](#adding-some-functionality)
-    * [Adapting functions to handlers](#adapting-functions-to-handlers)
-        * [GET](#get)
-        * [POST](#post)
-* [Calling the backend](#calling-the-backend)
+* [Building a basic backend](#building-a-basic-backend)
 * [Now what?](#now-what)
 * [Things that you should check out](#things-that-you-should-check-out)
 
@@ -142,7 +132,7 @@ What this means is that if you provide the client a stateless web interface meet
 If you have to get and retrieve data, and not a whole lot else, consider structuring your backend in accordance with [GraphQL](https://graphql.org/). For a teaser of what things look like on a GraphQL backend:
 
 ```json
-// request
+// Request
 // POST /pokemon
 {
     pokemon(name: "Ditto") {
@@ -151,7 +141,7 @@ If you have to get and retrieve data, and not a whole lot else, consider structu
     }
 }
 
-// response
+// Response
 {
     "data": {
         "pokemon": {
