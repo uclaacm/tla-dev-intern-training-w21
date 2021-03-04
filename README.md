@@ -21,11 +21,11 @@ Notes + resources for Teach LA's W21 batch of dev team interns!
     * Dev: [tests and CI + CD](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-6d-ci-cd-tests)
     * PM: [Figma & Web Design Pt. 2 Electric Boogaloo w/ Karen](https://github.com/uclaacm/tla-dev-intern-training-w21/blob/main/week-6p-designing-with-figma-2/Figma%20Day%202.md)
 7. Week 7
-    * Dev + PM: intro to backend + databases
+    * [Dev + PM: intro to backend + databases](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-7d-backend)
 8. Week 8
-    * Dev + PM: accessibility, responsiveness, and best practices
+    * [Dev + PM: Jekyll and the Teach LA Static Site](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-8-jekyll)
 9. Week 9
-    * TBD - likely dev + pm, intro to jekyll + the rest of the teach la tech stack
+    * [Dev + PM: accessibility and best practices](https://github.com/uclaacm/tla-dev-intern-training-w21/tree/main/week-9-accessibility-best-practices)
 10. Week 10 - presentations!
 
 ## Licensing
