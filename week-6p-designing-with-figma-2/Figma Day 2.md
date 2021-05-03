@@ -17,8 +17,7 @@
   * The magic keys
   * Pages
   * Naming conventions + batch rename
-  * Comments
-  
+  * Comments 
   * Exporting
 * Further reading
 
@@ -96,7 +95,7 @@ Above, I've tried to give you a sense of the importance of ethical design, inclu
 
 Figma is a vector-based application, which means that shapes are mathematically defined by **anchor points** and the connections between them.
 
-![](images/anchor.PNG)
+![](images/anchor.png)
 
 In Figma, anchor points are represented by blue circles. You can select and drag them to alter the shape (multi-select by holding Shift).
 
@@ -112,29 +111,29 @@ I do not know who first came up with the technology for Boolean groups, but this
 
 Let's say that I, while working on Learning Labs, decided to research logos of education organizations. 
 
-![](images/ed-logo.PNG)
+![](images/ed-logo.png)
 
 I decide that a simple image of a leaf is a motif associated with growth and education, and that I want to incorporate it into the Learning Labs logo. So I draw a circle and a triangle:
 
-![](images/shapes.PNG)
+![](images/shapes.png)
 
 And I go up to the menu bar and click on the arrow next to the icon with the two squares:
 
-![](images/union.PNG)
+![](images/union.png)
 
 You can see from the unbroken outline that we have now created a shape merging both of the components into one. In the layers panel, you can see that the underlying components are still there, just contained in a special type of group that *changes the relationship* between the components (the Boolean group). In the case of Union groups, the components are treated as one continuous object instead of two separate objects.
 
 We are still free to move around the components and adjust the properties of the overall shape, if we want.
 
-![](images/union-edit.PNG)
+![](images/union-edit.png)
 
 You can use the icons in the dropdown menu as guides to experiment with the other Boolean groups, which have different rules for how to combine the components. 
 
-![](images/boolean.PNG) 
+![](images/boolean.png) 
 
 Finally, I added text and arranged the new shape to create a logo for our Learning Lab:
 
-![](images/logo.PNG)
+![](images/logo.png)
 
 The above is a simple example, but you can imagine how powerful this function can be. Any complex shape can technically be broken into smaller and simpler shapes, a concept important in both calculus and graphic design.
 
@@ -142,7 +141,7 @@ To show you the possibilities of boolean groups, here is an astronaut I created 
 
 (Again, I do not recommend Figma for creating complex graphics, as drawing applications are probably better. But certain flat-design and icon styles work fairly well with this workflow.)
 
-![](images/astronaut.PNG)
+![](images/astronaut.png)
 
 #### Adding texture
 
@@ -156,7 +155,7 @@ Above the Fill panel, you'll see a Layer panel. Change the setting from Pass Thr
 
 To achieve the effect below, I set Difference on each of the leaf objects, as well as on the overarching group.
 
-![](images/blend-modes.PNG)
+![](images/blend-modes.png)
 
 Blend modes help imitate real-life lighting situations. For those interested in color theory, they can be a valuable tool in creating believable lighting and color in your designs.
 
@@ -164,25 +163,25 @@ Blend modes help imitate real-life lighting situations. For those interested in 
 
 Select a shape and click on the fill color. Above the color picker, there is a dropdown menu where you can change the fill from Solid to Linear (linear gradient). The default gradient has one color stop set to the original color of your object, and another color stop set to the original color at 0% opacity. You can adjust the opacity in the slider below the hue picker.
 
-![](images/gradient.PNG)
+![](images/gradient.png)
 
 You can also add color stops by clicking anywhere on the color stop bar, and change the color of a color stop the way you would set any solid fill. 
 
 Feel free to experiment with the different types of gradients, including Angular, Radial, and Diamond.
 
-![](images/color-stops.PNG)
+![](images/color-stops.png)
 
 **Effects**
 
 Drop (outer) and inner shadows can be used to draw attention to features like buttons. They can also provide a sense of depth to a design. In the below example, a drop shadow on the header separates it from the white background. You can adjust the offset of a shadow, as well as the blur amount (how close the light source is, or how sharp the shadow is) and the color.
 
-![](images/drop-shadow.PNG)
+![](images/drop-shadow.png)
 
 Blur effects are very "in" at the moment; try them out to create varying glassy and translucent effects. The important thing about the background blur is that it only works if the fill is less than 100% opaque.
 
 Blurring can provide a sense of continuity in a design, because you can still see what's going on in the background. Apple uses it often in the home screen environment of iPhones.
 
-![](images/blur.PNG)
+![](images/blur.png)
 
 #### Smart selection
 
@@ -190,14 +189,14 @@ You'll find that you're often adjusting the spacing between elements, trying to 
 
 Alternatively, on the top right of the options panel, you'll find a dropdown menu with different options for spacing out your items.
 
-![](images/distribution.PNG)
+![](images/distribution.png)
 
 Once the objects are evenly distributed, you can do two things:
 
 1. Adjust the exact spacing through the spacing field that appears below the rotation field in the options panel.
 1. Hover over each object in the selection until a pink "smart selection" circle appears. Then, you can rearrange the order of the objects by dragging from the pink circle.
 
-![](images/smart-select.PNG)
+![](images/smart-select.png)
 
 #### Using libraries and styles
 
@@ -211,9 +210,9 @@ At my previous graphic-design positions and internships, we've used [Pexels](htt
 
 Free stock photo sites often encourage users to cite the authors to thank them for their work. Consider adding a simple image citations page linked through the footer of your website or in the acknowledgments page of your app. Or, place an unintrusive watermark citation on the image itself.
 
-![](images/image.PNG)
+![](images/image.png)
 
-Image files like JPEGs, GIFs, and PNGs are treated as fills in Figma. By clicking on the thumbnail in the Fill section, you can make basic adjustments to the lighting and color.
+Image files like JPEGs, GIFs, and pngs are treated as fills in Figma. By clicking on the thumbnail in the Fill section, you can make basic adjustments to the lighting and color.
 
 The most important setting for images is the sizing option, found in the adjustment panel next to the opacity setting. The default "Fill" allows you to adjust aspect ratio without distorting the image. Set "Crop" for more traditional, distortion-prone sizing.
 
@@ -221,7 +220,7 @@ For free icons, try [The Noun Project](https://thenounproject.com/). Most free d
 
 Other options include free icon sets found in the Figma community or on the web, although most come with the requirement that you must cite the original author.
 
-![](images/iconly.PNG)
+![](images/iconly.png)
 
 ### Workflow
 
@@ -251,13 +250,13 @@ In my workflow, I usually start off on a page by churning out ideas. Then, I lab
 
 Pages are located at almost the top of the layers panel.
 
-![](images/pages.PNG)
+![](images/pages.png)
 
 #### Naming 
 
 Press `Ctrl` + `R` to batch rename multiple selected layers. You can even set 
 
-![](images/rename.PNG)
+![](images/rename.png)
 
 #### Comments
 
@@ -265,7 +264,7 @@ Design is very rarely successful without collaboration. Share your file with oth
 
 The great thing about Figma is that it supports multiple users viewing and editing the same file simultaneously.
 
-![](images/share.PNG)
+![](images/share.png)
 
 During design review meetings, I like to take notes (or else feedback goes in one ear and out the other). Press `C` to access the comment tool in Figma. Click anywhere in your workspace to leave a note! You can also set email notifications to keep up on important conversations.
 
@@ -273,7 +272,7 @@ You'll notice that the options panel changes completely: you can later use this 
 
 Comments are hidden unless you have selected the Comment tool.
 
-![](images/comment.PNG)
+![](images/comment.png)
 
 ## Further reading
 
