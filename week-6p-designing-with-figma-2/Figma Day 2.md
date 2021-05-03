@@ -95,7 +95,7 @@ Above, I've tried to give you a sense of the importance of ethical design, inclu
 
 Figma is a vector-based application, which means that shapes are mathematically defined by **anchor points** and the connections between them.
 
-![](images/anchor.png)
+![Star and circle shapes defined by blue circular anchor points](images/anchor.png)
 
 In Figma, anchor points are represented by blue circles. You can select and drag them to alter the shape (multi-select by holding Shift).
 
@@ -111,29 +111,29 @@ I do not know who first came up with the technology for Boolean groups, but this
 
 Let's say that I, while working on Learning Labs, decided to research logos of education organizations. 
 
-![](images/ed-logo.png)
+![Some examples of education-related logos, mostly involving books, graduation caps, and leaves](images/ed-logo.png)
 
 I decide that a simple image of a leaf is a motif associated with growth and education, and that I want to incorporate it into the Learning Labs logo. So I draw a circle and a triangle:
 
-![](images/shapes.png)
+![Adding a triangle on the top of a circle](images/shapes.png)
 
 And I go up to the menu bar and click on the arrow next to the icon with the two squares:
 
-![](images/union.png)
+![Joining the triangle and circle shape to form a teardrop](images/union.png)
 
 You can see from the unbroken outline that we have now created a shape merging both of the components into one. In the layers panel, you can see that the underlying components are still there, just contained in a special type of group that *changes the relationship* between the components (the Boolean group). In the case of Union groups, the components are treated as one continuous object instead of two separate objects.
 
 We are still free to move around the components and adjust the properties of the overall shape, if we want.
 
-![](images/union-edit.png)
+![Dragging the triangle to the side of the merged shape to create an abstract fish-like shape](images/union-edit.png)
 
 You can use the icons in the dropdown menu as guides to experiment with the other Boolean groups, which have different rules for how to combine the components. 
 
-![](images/boolean.png) 
+![Four examples of applying different boolean operations to the triangle and circle to create different composite shapes](images/boolean.png) 
 
 Finally, I added text and arranged the new shape to create a logo for our Learning Lab:
 
-![](images/logo.png)
+![Learning Lab logo consisting of two abstract triangles, one purple and one green](images/logo.png)
 
 The above is a simple example, but you can imagine how powerful this function can be. Any complex shape can technically be broken into smaller and simpler shapes, a concept important in both calculus and graphic design.
 
@@ -141,7 +141,7 @@ To show you the possibilities of boolean groups, here is an astronaut I created 
 
 (Again, I do not recommend Figma for creating complex graphics, as drawing applications are probably better. But certain flat-design and icon styles work fairly well with this workflow.)
 
-![](images/astronaut.png)
+![Black astronaut figure in an informal design style](images/astronaut.png)
 
 #### Adding texture
 
@@ -155,7 +155,7 @@ Above the Fill panel, you'll see a Layer panel. Change the setting from Pass Thr
 
 To achieve the effect below, I set Difference on each of the leaf objects, as well as on the overarching group.
 
-![](images/blend-modes.png)
+![Applying a Difference blend mode to make a reddish tint where the two teardrop shapes of the Learning Lab logo overlap](images/blend-modes.png)
 
 Blend modes help imitate real-life lighting situations. For those interested in color theory, they can be a valuable tool in creating believable lighting and color in your designs.
 
@@ -163,25 +163,25 @@ Blend modes help imitate real-life lighting situations. For those interested in 
 
 Select a shape and click on the fill color. Above the color picker, there is a dropdown menu where you can change the fill from Solid to Linear (linear gradient). The default gradient has one color stop set to the original color of your object, and another color stop set to the original color at 0% opacity. You can adjust the opacity in the slider below the hue picker.
 
-![](images/gradient.png)
+![Setting a diagonal purple and orange gradient by setting the Fill to a linear gradient](images/gradient.png)
 
 You can also add color stops by clicking anywhere on the color stop bar, and change the color of a color stop the way you would set any solid fill. 
 
 Feel free to experiment with the different types of gradients, including Angular, Radial, and Diamond.
 
-![](images/color-stops.png)
+![Changing the gradient type to Angular at the top of the Fill panel](images/color-stops.png)
 
 **Effects**
 
 Drop (outer) and inner shadows can be used to draw attention to features like buttons. They can also provide a sense of depth to a design. In the below example, a drop shadow on the header separates it from the white background. You can adjust the offset of a shadow, as well as the blur amount (how close the light source is, or how sharp the shadow is) and the color.
 
-![](images/drop-shadow.png)
+![Adding a drop shadow to a "Start" button under the Effects panel](images/drop-shadow.png)
 
 Blur effects are very "in" at the moment; try them out to create varying glassy and translucent effects. The important thing about the background blur is that it only works if the fill is less than 100% opaque.
 
 Blurring can provide a sense of continuity in a design, because you can still see what's going on in the background. Apple uses it often in the home screen environment of iPhones.
 
-![](images/blur.png)
+![Adding a background blur to a translucent white text box to add a glass-like effect using the Effects panel](images/blur.png)
 
 #### Smart selection
 
@@ -189,7 +189,7 @@ You'll find that you're often adjusting the spacing between elements, trying to 
 
 Alternatively, on the top right of the options panel, you'll find a dropdown menu with different options for spacing out your items.
 
-![](images/distribution.png)
+![Evenly distributing the horizontal space separating three text boxes to achieve symmetry](images/distribution.png)
 
 Once the objects are evenly distributed, you can do two things:
 
@@ -210,7 +210,7 @@ At my previous graphic-design positions and internships, we've used [Pexels](htt
 
 Free stock photo sites often encourage users to cite the authors to thank them for their work. Consider adding a simple image citations page linked through the footer of your website or in the acknowledgments page of your app. Or, place an unintrusive watermark citation on the image itself.
 
-![](images/image.png)
+![Changing the fill style of a stock image to Fill, as opposed to Fit, Crop, or Tile](images/image.png)
 
 Image files like JPEGs, GIFs, and pngs are treated as fills in Figma. By clicking on the thumbnail in the Fill section, you can make basic adjustments to the lighting and color.
 
@@ -220,7 +220,7 @@ For free icons, try [The Noun Project](https://thenounproject.com/). Most free d
 
 Other options include free icon sets found in the Figma community or on the web, although most come with the requirement that you must cite the original author.
 
-![](images/iconly.png)
+![The free Iconly set of 500+ icons available via Figma Community](images/iconly.png)
 
 ### Workflow
 
@@ -250,13 +250,13 @@ In my workflow, I usually start off on a page by churning out ideas. Then, I lab
 
 Pages are located at almost the top of the layers panel.
 
-![](images/pages.png)
+![Showing the location of the Pages dropdown at the top of the Layers panel](images/pages.png)
 
 #### Naming 
 
 Press `Ctrl` + `R` to batch rename multiple selected layers. You can even set 
 
-![](images/rename.png)
+![The renaming dialog, which has options to add automatic numeric indexing and other batch actions](images/rename.png)
 
 #### Comments
 
@@ -264,7 +264,7 @@ Design is very rarely successful without collaboration. Share your file with oth
 
 The great thing about Figma is that it supports multiple users viewing and editing the same file simultaneously.
 
-![](images/share.png)
+![The sharing dialog, which has options to share the document with individuals, copy a shareable link to the document, or set permissions globally](images/share.png)
 
 During design review meetings, I like to take notes (or else feedback goes in one ear and out the other). Press `C` to access the comment tool in Figma. Click anywhere in your workspace to leave a note! You can also set email notifications to keep up on important conversations.
 
@@ -272,7 +272,7 @@ You'll notice that the options panel changes completely: you can later use this 
 
 Comments are hidden unless you have selected the Comment tool.
 
-![](images/comment.png)
+![The comment dialog allows the user to post or cancel a comment directly on the Figma document, marked by a upside-down teardrop shape](images/comment.png)
 
 ## Further reading
 
